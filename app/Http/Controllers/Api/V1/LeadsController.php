@@ -39,7 +39,7 @@ class LeadsController extends Controller {
         $lead = new Leads($request->validated());
         $lead->save();
 
-        return response()->json($lead);
+        return response()->json($lead, 201);
     }
 
     /**
