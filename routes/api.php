@@ -22,6 +22,10 @@ Route::namespace('Api\V1')
     ->prefix('v1')
     ->name('v1.')
     ->group(function(){
-        Route::apiResource('leads', 'LeadsController');
+        // Weird bug with model name being plural //
+        /**
+         * @todo come back and adjust if needed
+         */
+        Route::apiResource('leads', 'LeadsController')->parameters(['leads' => 'leads']);
     }
 );
